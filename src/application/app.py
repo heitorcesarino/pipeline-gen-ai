@@ -1,4 +1,5 @@
 import streamlit as st
+import data_contract as dc
 
 def main():
     st.title('Bem vindo ao Sistema de CRM e Vendas Ticaracatica')
