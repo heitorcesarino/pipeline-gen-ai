@@ -17,3 +17,7 @@
     Inicialize seu ambiente virtual (poetry shell)
 
     No shell do ambiente virtual, na pasta raiz do projeto, rode o comando streamlit run app.py
+
+### Documentação
+
+    No shell do ambiente virtual, na pasta raiz do projeto, rode o comando mkdocs serve
