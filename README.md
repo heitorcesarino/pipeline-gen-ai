@@ -16,7 +16,7 @@
 
     Inicialize seu ambiente virtual (poetry shell)
 
-    No shell do ambiente virtual, na pasta raiz do projeto, rode o comando streamlit run app.py
+    No shell do ambiente virtual, navegue até a  pasta /src/application do projeto, rode o comando streamlit run app.py
 
 ### Documentação
 
