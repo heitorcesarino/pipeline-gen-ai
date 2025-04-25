@@ -5,6 +5,7 @@ from pydantic import ValidationError
 from db import salvar_no_postgres
 
 def main():
+    '''Função principal do aplicativo Streamlit.'''
 
     st.title('Bem vindo ao Sistema de CRM e Vendas Ticaracatica')
     email = st.text_input('Email do Vendedor')

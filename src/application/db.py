@@ -13,6 +13,7 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 def salvar_no_postgres(dados: Vendas):
+    '''Salva os dados de vendas no banco de dados PostgreSQL.'''
     try:
         conn = psycopg2.connect(
             host=DB_HOST,
