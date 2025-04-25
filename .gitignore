@@ -1,3 +1,4 @@
 tests
 poetry.lock
 .venv
+.env

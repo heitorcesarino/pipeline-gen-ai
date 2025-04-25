@@ -1,5 +1,5 @@
 from datetime import datetime
-from pydantic import BaseModel, EmailStr, validate_call, PositiveFloat, PositiveInt
+from pydantic import BaseModel, EmailStr, PositiveFloat, PositiveInt
 from enum import Enum
 
 class ProductEnum(str, Enum):
@@ -14,8 +14,3 @@ class Vendas(BaseModel):
     valor: PositiveFloat
     quantidade: PositiveInt
     categoria: ProductEnum
-
-    @validate_call('categoria')
-    def enum_categoria(cls, v):
-        return v
-    
