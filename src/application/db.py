@@ -14,7 +14,7 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 def salvar_no_postgres(dados: Vendas):
     try:
-        conn =- psycopg2.connect(
+        conn = psycopg2.connect(
             host=DB_HOST,
             database=DB_NAME,
             user=DB_USER,
@@ -23,7 +23,7 @@ def salvar_no_postgres(dados: Vendas):
         cursor = conn.cursor()
 
         insert_query = sql.SQL(
-            "INSERT INTO vendas (email, data_hora, valor, quantidade, produto) VALUES (%s, %s, %s, %s, %s, %s)"
+            "INSERT INTO vendas (email, data_hora, valor, quantidade, produto) VALUES (%s, %s, %s, %s, %s)"
         )
 
         cursor.execute(insert_query, (
@@ -31,12 +31,12 @@ def salvar_no_postgres(dados: Vendas):
             dados.data_hora,
             dados.valor,
             dados.quantidade,
-            dados.produto
+            dados.produto.value
         ))
         conn.commit()
         cursor.close()
         conn.close()
         st.success("Dados salvos com sucesso no banco de dados!")
     except Exception as e:
-        st.error(f"Erro ao conectar ao banco de dados: {e}")
+        st.error(f"Erro ao salvar no banco de dados: {e}")
         return
