@@ -13,4 +13,4 @@ class Vendas(BaseModel):
     data_hora: datetime
     valor: PositiveFloat
     quantidade: PositiveInt
-    categoria: ProductEnum
+    produto: ProductEnum

@@ -2,6 +2,7 @@ import streamlit as st
 from data_contract import Vendas
 from datetime import datetime
 from pydantic import ValidationError
+from db import salvar_no_postgres
 
 def main():
 
@@ -11,14 +12,20 @@ def main():
     hora = st.time_input('Hora da Venda')
     valor = st.number_input('Valor da Venda')
     quantidade = st.number_input('Quantidade de Produtos')
-    categoria = st.selectbox('Tipo de Produto', ['Produto A', 'Produto B', 'Produto C'])
+    produto = st.selectbox('Tipo de Produto', ['Produto A', 'Produto B', 'Produto C'])
     data_hora = datetime.combine(data, hora)
 
     if st.button('Salvar'):
         try:
-            venda = Vendas(email=email, data_hora=data_hora, valor=valor, quantidade=quantidade, categoria=categoria)
+            venda = Vendas(
+                email=email, 
+                data_hora=data_hora, 
+                valor=valor, 
+                quantidade=quantidade, 
+                produto=produto
+            )
+            salvar_no_postgres(venda)
             st.success('Venda salva com sucesso!')
-            st.write(venda)
         except ValidationError as e:
             st.error(f"Erro na validação: {e}")
             return
