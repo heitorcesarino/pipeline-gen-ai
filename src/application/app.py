@@ -7,7 +7,7 @@ from db import salvar_no_postgres
 def main():
     '''Função principal do aplicativo Streamlit.'''
 
-    st.title('Bem vindo ao Sistema de CRM e Vendas Ticaracatica')
+    st.title('Bem vindo ao Sistema de CRM e Vendas POTKSED')
     email = st.text_input('Email do Vendedor')
     data = st.date_input('Data da venda')
     hora = st.time_input('Hora da Venda')
@@ -32,7 +32,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    st.write("Sistema de CRM e Vendas Ticaracatica")
+    st.write("Sistema de CRM e Vendas POTKSED")
     st.write("Desenvolvido por: Heitor Cesarino")
     st.write("Versão: 1.0")
     st.write("Data: 2025-04-23")
